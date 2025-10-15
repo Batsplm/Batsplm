@@ -1,0 +1,406 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fffefe;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #333;
+}
+
+header .logo img {
+    width: 100px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #ffa500;
+}
+
+/* Slideshow */
+.slideshow {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Información Fija */
+.info-section {
+    padding: 3rem 2rem;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.info-box {
+    margin: 6rem auto;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.info-box h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.info-box p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Fade-in Effect */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sections */
+.section {
+    display: none;
+    padding: 2rem;
+    text-align: center;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Galería */
+.gallery-main {
+    margin: 1rem auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease;
+}
+
+.info-box {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+}
+
+.gallery-thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery-thumbnails img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-thumbnails img:hover {
+    opacity: 1;
+}
+
+/* Servicios */
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.service {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.service:nth-child(even) .text {
+    order: 2;
+}
+
+.text {
+    flex: 1;
+}
+
+.text h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.text p {
+    margin-bottom: 0.5rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.image {
+    flex: 1;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Contacto */
+#contacto {
+    text-align: center;
+    padding: 2rem;
+}
+
+.contact-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.contact-links li {
+    margin-bottom: 1rem;
+}
+
+.contact-links a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #007bff;
+}
+
+.contact-links .icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Bolsa de Trabajo */
+.jobs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.job {
+    text-align: left;
+    border-left: 4px solid #007bff;
+    padding: 1rem 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.job h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.job p {
+    margin-bottom: 0.5rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.job a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.job a:hover {
+    text-decoration: underline;
+}
+
+/* Fade-in effect */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Nosotros */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.about-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.text h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.text p {
+    margin-bottom: 0.5rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Alinear alternadamente */
+.about-item:nth-child(even) .text {
+    order: 2;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .slideshow {
+        height: 50vh;
+    }
+
+    .info-section, .services-container, .jobs-container, .about-container {
+        padding: 1.5rem;
+    }
+
+    .gallery-main {
+        max-width: 100%;
+    }
+
+    .gallery-thumbnails img {
+        width: 80px;
+    }
+
+    .service, .job, .about-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service .text, .job .text, .about-item .text {
+        margin-bottom: 1rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo img {
+        width: 80px;
+    }
+
+    .info-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .info-box p {
+        font-size: 0.9rem;
+    }
+
+    .text h3 {
+        font-size: 1.2rem;
+    }
+
+    .text p {
+        font-size: 0.9rem;
+    }
+
+    .image img {
+        max-width: 100%;
+    }
+
+    footer {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+}
